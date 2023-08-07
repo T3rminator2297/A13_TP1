@@ -3,3 +3,4 @@ public abstract class FormeFactory
 {
     public abstract Forme creerForme(double largeur, double hauteur);
 }
+111 2

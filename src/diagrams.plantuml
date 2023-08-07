@@ -1,0 +1,38 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+interface Forme << interface >> {
+  + render(): void
+  + computeArea(): double
+}
+class FormeFactory {
+  + FormeFactory(): 
+  + creerForme(double, double): Forme
+}
+class LegacyRectangle {
+  + LegacyRectangle(double, double): 
+  + LegacyRectangle(): 
+  + calculerAire(): double
+  + affichage(): void
+}
+class Main {
+  + Main(): 
+  + main(String[]): void
+  + afficherForme(Forme): void
+}
+class RectangleAdapter {
+  + RectangleAdapter(LegacyRectangle): 
+  + computeArea(): double
+  + render(): void
+}
+class RectangleFactory {
+  + RectangleFactory(): 
+  + creerForme(double, double): Forme
+}
+
+RectangleAdapter  -[#008200,dashed]-^  Forme            
+RectangleFactory  -[#000082,plain]-^  FormeFactory     
+@enduml
