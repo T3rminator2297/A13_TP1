@@ -1,3 +1,4 @@
+// Implémentation concrète de l'adapter pour les rectangles
 public class RectangleAdapter implements Forme
 {
     private LegacyRectangle legacyRectangle;
